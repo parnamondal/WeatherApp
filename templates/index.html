@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Your weather app !</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+  body{
+   font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+</style>
+</head>
+
+<body style="background: #0479c2; color: white;">
+  <nav class="row" style="background: #3b5666; color: white;">
+    <h1 class="col-md-3 text-center">WEATHER APP</h1>
+  </nav>
+  <br />
+  <br />
+  <center class="row">
+    <form method="post" class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <input type="text" class="form-control" name="city" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row">
+    {% if data.country_code and data.coordinate and data.temp and data.pressure and data.humidity %}
+    <div class="col-md-6 col-md-offset-3">
+      <h3><strong>Country Code :</strong> {{data.country_code}}</h4><br>
+        <h4><strong>Coordinates :</strong> {{data.coordinate}}</h4><br>
+        <h4><strong>Current Temparature :</strong> {{data.temp}}</h4><br>
+        <h4><strong>Pressure : </strong>{{data.pressure}} </h4><br>
+        <h4><strong>Humidity :</strong> {{data.humidity}}</h4><br>
+        <h4><strong>Weather-description :</strong> {{data.des}}</h4><br>
+        <h4><strong>Wind-Speed :</strong> {{data.wind}}</h4><br>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
